@@ -52,8 +52,8 @@ func main() {
 }
 
 type Response struct {
-	Status  string `json: "status"`
-	Message string `json: "message"`
+	Status  string `json:"status"`
+	Message string `json:"message"`
 }
 
 // Function called whenever a message is created in any channel the bot has access to
