@@ -63,6 +63,13 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		return
 	}
 
+	if m.Content == "!me" {
+		_, err := s.ChannelMessageSend(m.ChannelID, "Hello, you are: "+m.Author.Username)
+		if err != nil {
+			fmt.Println(err)
+		}
+	}
+
 	if m.Content == "!dog" {
 		// Call KuteGo API for dr-who Gopher
 		res, err := http.Get(DogAPIURL + "breeds/image/random")
